@@ -20,6 +20,9 @@ Todo cambio se verifica recargando la página en el navegador.
 Para publicar (documentar, commitear en `main`, hacer push y desplegar en GitHub Pages) está el
 comando `/dcpd`, definido en `.claude/commands/dcpd.md`.
 
+Para revisar los textos en español de la página (ortografía, tono cercano y anglicismos) está la
+skill `/text-reviewer`, definida en `.claude/skills/text-reviewer/SKILL.md`.
+
 ## Arquitectura
 
 `index.html` tiene tres capas, y editar una suele exigir tocar las otras:

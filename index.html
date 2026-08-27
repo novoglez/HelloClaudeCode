@@ -283,10 +283,9 @@
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
       <p>
-        Me dedico al desarrollo de software y disfruto construyendo soluciones prácticas y bien pensadas.
+        Me dedico al desarrollo de software y disfruto construyendo cosas prácticas y bien pensadas.
         Me interesan las buenas prácticas de programación, aprender tecnologías nuevas y mejorar continuamente
-        la forma en que escribo y organizo el código. Fuera del trabajo, me gusta seguir explorando ideas
-        que me ayuden a crecer tanto profesional como personalmente.
+        la forma en que escribo y organizo el código. Fuera del trabajo sigo trasteando con ideas nuevas.
       </p>
     </section>
 
@@ -343,6 +342,13 @@
       return tareas;
     }
 
+    function textoVacio() {
+      if (tareas.length === 0) return 'Aún no hay tareas';
+      if (filtroActual === 'pendientes') return 'No te queda nada pendiente';
+      if (filtroActual === 'hechas') return 'Todavía no has terminado ninguna';
+      return 'Aún no hay tareas';
+    }
+
     function render() {
       const visibles = tareasFiltradas();
       lista.innerHTML = '';
@@ -350,7 +356,7 @@
       if (visibles.length === 0) {
         const vacio = document.createElement('li');
         vacio.className = 'vacio';
-        vacio.textContent = 'No hay tareas para mostrar.';
+        vacio.textContent = textoVacio();
         vacio.style.border = 'none';
         lista.appendChild(vacio);
       } else {
